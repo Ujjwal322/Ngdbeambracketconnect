@@ -61,6 +61,41 @@ namespace Ngdbeambracketconnect.Model
             SingleBoltOverhang
         }
 
+        [DefaultValue(FullLength)]
+        [TypeConverter(typeof(EnumDescriptionTypeConverter))]
+        public enum LengthOptionEnum
+        {
+            [Description("Full Length")]
+            FullLength,
+            [Description("Partial Length")]
+            PartialLength
+        }
+
+        [DefaultValue(MatchesOuterOption)]
+        [TypeConverter(typeof(EnumDescriptionTypeConverter))]
+        public enum InnerBoltOptionEnum
+        {
+            [Description("Matches Outer Option")]
+            MatchesOuterOption,
+            [Description("Flush Inset (Type I)")]
+            FlushInset,
+            [Description("Flush Slight Overhang (Type F)")]
+            FlushSlightOverhang,
+            [Description("Single Bolt Overhang (Type E)")]
+            SingleBoltOverhang
+        }
+
+        [DefaultValue(BuiltUpBeam)]
+        [TypeConverter(typeof(EnumDescriptionTypeConverter))]
+        public enum CanopyOptionEnum
+        {
+           
+            [Description("Built Up Beam")]
+            BuiltUpBeam,
+            [Description("Hot Rolled")]
+            HotRolled
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
